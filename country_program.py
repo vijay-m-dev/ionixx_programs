@@ -21,7 +21,7 @@ def dijk(src):
         u=minindex
         vis[u]=True
         for v in range(n):
-            if l[u][v]>0 and vis[v]==False and (d[v]>d[u]+l[u][v] or (d[v]==d[u]+l[u][v] and d1[v]<d1[u]+l1[u][v])):
+            if l[u][v]>0 and vis[v]==False and (d[v]>d[u]+l[u][v] or (d[v]==d[u]+l[u][v] and d1[v]>d1[u]+l1[u][v])):
                 d[v]=d[u]+l[u][v]
                 d1[v]=d1[u]+l1[u][v]
     return [d,d1]
